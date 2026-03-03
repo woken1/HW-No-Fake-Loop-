@@ -21,6 +21,42 @@ BiList<T>* create_node(const T& value) {
 }
 
 template< class T >
+BiList<T>* pop_front(BiList<T>* head, BiList<T>*& tail) {
+    if (head == nullptr) {
+        return nullptr;
+    }
+    
+    BiList<T>* newHead = head->next;
+    
+    if (newHead != nullptr) {
+        newHead->prev = nullptr;
+    } else {
+        tail = nullptr;
+    }
+    
+    delete head;
+    return newHead;
+}
+
+template< class T >
+BiList<T>* pop_back(BiList<T>* head, BiList<T>*& tail) {
+    if (tail == nullptr) {
+        return nullptr;
+    }
+    
+    BiList<T>* newTail = tail->prev;
+    
+    if (newTail != nullptr) {
+        newTail->next = nullptr;
+    } else {
+        head = nullptr;
+    }
+    
+    delete tail;
+    return head;
+}
+
+template< class T >
 BiList<T>* push_front(BiList<T>* head, BiList<T>*& tail, const T& value) {
     BiList<T>* newNode = create_node(value);
     
