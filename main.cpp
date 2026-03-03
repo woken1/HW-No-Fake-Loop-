@@ -18,6 +18,34 @@ int main() {
     
     std::cout << "Список: ";
     print(head);
+    std::cout << "Размер: " << size(head) << std::endl;
+    
+    std::cout << "Обратный: ";
+    BiList<char>* current = tail;
+    while (current != nullptr) {
+        std::cout << current->data;
+        if (current->prev != nullptr) {
+            std::cout << " <-> ";
+        }
+        current = current->prev;
+    }
+    std::cout << std::endl;
+    
+    std::cout << "Добавить Z в начало" << std::endl;
+    head = push_front(head, tail, 'Z');
+    print(head);
+    
+    std::cout << "Добавить E в конец" << std::endl;
+    head = push_back(head, tail, 'E');
+    print(head);
+    
+    std::cout << "Удалить из начала" << std::endl;
+    head = pop_front(head, tail);
+    print(head);
+    
+    std::cout << "Удалить из конца" << std::endl;
+    head = pop_back(head, tail);
+    print(head);
     
     std::cout << "Очистка..." << std::endl;
     clear(head);
