@@ -115,6 +115,21 @@ BiList<T>* array_to_list(const T* arr, size_t size, BiList<T>*& tail) {
 }
 
 template< class T >
+size_t size(const BiList<T>* head) {
+    size_t count = 0;
+    while (head != nullptr) {
+        count++;
+        head = head->next;
+    }
+    return count;
+}
+
+template< class T >
+bool empty(const BiList<T>* head) {
+    return head == nullptr;
+}
+
+template< class T >
 void clear(BiList<T>* head) {
     while (head != nullptr) {
         BiList<T>* next = head->next;
