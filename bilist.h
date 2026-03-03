@@ -2,6 +2,7 @@
 #define BILIST_H
 
 #include <cstddef>
+#include <iostream>
 
 template< class T >
 struct BiList {
@@ -33,6 +34,20 @@ BiList<T>* push_back(BiList<T>* head, BiList<T>*& tail, const T& value) {
     }
     
     return head;
+}
+
+template< class T >
+void print(const BiList<T>* head) {
+    const BiList<T>* current = head;
+    
+    while (current != nullptr) {
+        std::cout << current->data;
+        if (current->next != nullptr) {
+            std::cout << " <-> ";
+        }
+        current = current->next;
+    }
+    std::cout << std::endl;
 }
 
 #endif
