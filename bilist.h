@@ -50,4 +50,16 @@ void print(const BiList<T>* head) {
     std::cout << std::endl;
 }
 
+template< class T >
+BiList<T>* array_to_list(const T* arr, size_t size, BiList<T>*& tail) {
+    BiList<T>* head = nullptr;
+    tail = nullptr;
+    
+    for (size_t i = 0; i < size; ++i) {
+        head = push_back(head, tail, arr[i]);
+    }
+    
+    return head;
+}
+
 #endif
