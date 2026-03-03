@@ -21,6 +21,22 @@ BiList<T>* create_node(const T& value) {
 }
 
 template< class T >
+BiList<T>* push_front(BiList<T>* head, BiList<T>*& tail, const T& value) {
+    BiList<T>* newNode = create_node(value);
+    
+    if (head == nullptr) {
+        head = newNode;
+        tail = newNode;
+    } else {
+        newNode->next = head;
+        head->prev = newNode;
+        head = newNode;
+    }
+    
+    return head;
+}
+
+template< class T >
 BiList<T>* push_back(BiList<T>* head, BiList<T>*& tail, const T& value) {
     BiList<T>* newNode = create_node(value);
     
