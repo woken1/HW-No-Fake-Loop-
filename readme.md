@@ -17,15 +17,6 @@ struct BiList {
     BiList<T>* prev;
 };
 
-
-### Схема списка
-
-head              tail
-  ↓                ↓
-[A] ↔ [B] ↔ [C] ↔ [D]
-
----
-
 ## Задача 1. Неявный интерфейс
 
 create_node(value)  Создать новый узел 
@@ -68,15 +59,6 @@ BiList<T>* array_to_list(const T* arr, size_t size, BiList<T>*& tail);
 ---
 
 ## Задача 3. Реализация
-
-### Файлы проекта
-
-project/
-├── README.md
-├── bilist.h
-└── main.cpp
-
-### Особенности
 
 - Шаблоны — работает с любым типом T
 - head передаётся по значению, tail по ссылке
