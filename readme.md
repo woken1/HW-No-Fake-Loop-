@@ -19,15 +19,15 @@ struct BiList {
 
 ## Задача 1. Неявный интерфейс
 
-create_node(value)  Создать новый узел 
-push_front(head, tail, value) Добавить в начало 
-push_back(head, tail, value) Добавить в конец
-pop_front(head, tail) Удалить из начала
-pop_back(head, tail) Удалить из конца
-size(head) Количество элементов
-empty(head) Проверка на пустоту
-clear(head) Очистить список
-array_to_list(arr, size, tail) Массив → список
+create_node(value)  Создать новый узел \
+push_front(head, tail, value) Добавить в начало \
+push_back(head, tail, value) Добавить в конец\
+pop_front(head, tail) Удалить из начала\
+pop_back(head, tail) Удалить из конца\
+size(head) Количество элементов\
+empty(head) Проверка на пустоту\
+clear(head) Очистить список\
+array_to_list(arr, size, tail) Массив → список\
 print(head) | Вывод на экран
 
 ---
@@ -60,8 +60,8 @@ BiList<T>* array_to_list(const T* arr, size_t size, BiList<T>*& tail);
 
 ## Задача 3. Реализация
 
-- Шаблоны — работает с любым типом T
-- head передаётся по значению, tail по ссылке
+- Шаблоны — работает с любым типом T\
+- head передаётся по значению, tail по ссылке\
 - Каждый узел выделяется через new
 
 ---
